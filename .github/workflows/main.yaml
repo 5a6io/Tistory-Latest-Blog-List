@@ -24,7 +24,6 @@ jobs:
       - name: Update README
         run: npm start
       - name: Commit README
-        if: steps.verify_diff.outputs.changed = 'true'
         run: |
           git config --local user.email "yhm54321@naver.com"
           git config --local user.name "5a6io"
