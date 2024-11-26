@@ -23,7 +23,12 @@ jobs:
           npm install rss-parser
       - name: Update README
         run: npm start
+      - name: Check if there are any changes
+        id: verify_diff
+        run: |
+          git diff --quiet . || echo "changed=true" >> $GITHUB_OUTPUT
       - name: Commit README
+        if: steps.verify_diff.outputs.changed == 'true'
         run: |
           git config --local user.email "yhm54321@naver.com"
           git config --local user.name "5a6io"
