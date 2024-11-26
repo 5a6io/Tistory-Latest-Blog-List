@@ -7,11 +7,11 @@ on:
     branches: [main]
   # 1시간에 한번씩 아래 스크립트를 실행.  
   schedule:
-    - cron: "0 */1 * * *"
+    - cron: "0 */4 * * *"
 
 jobs:
   build:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
