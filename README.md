@@ -1,1 +1,1 @@
-# 📕 Lastest Blog Posts
+# 📕 Latest Blog Posts
