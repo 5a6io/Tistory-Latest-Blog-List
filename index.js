@@ -9,7 +9,7 @@ let text = '#📕 Latest Blog Posts';
 
 const parser = new Parser({
     headers: {
-        Accept: 'application/rss+xml, aplication/xml, text/xml; q=0.1',
+        Accept: 'application/rss+xml, application/xml, text/xml; q=0.1',
     }});
 
 (async () => {
