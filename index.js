@@ -5,7 +5,7 @@ import Parser from 'rss-parser';
  * README.MD에 작성될 페이지 텍스트
  */
 
-let text = '#📕 Lastest Blog Posts';
+let text = '#📕 Latest Blog Posts';
 
 const parser = new Parser({
     headers: {
