@@ -5,16 +5,17 @@ import Parser from 'rss-parser';
  * README.MD에 작성될 페이지 텍스트
  */
 
-let text = '#📕 Latest Blog Posts';
+let text = `#📕 Latest Blog Posts`;
 
 const parser = new Parser({
     headers: {
-        Accept: 'application/rss+xml, application/xml, text/xml; q=0.1',
-    }});
+        Accept: "application/rss+xml, application/xml, text/xml; q=0.1",
+    },
+});
 
 (async () => {
 
-    const feed = await parser.parseURL('https://lucy-devblog.tistory.com/rss');
+    const feed = await parser.parseURL("https://lucy-devblog.tistory.com/rss");
 
     text += `<ul>`;
 
@@ -28,8 +29,9 @@ const parser = new Parser({
 
     text += `</ul>`;
 
-    writeFileSync('README.md', text, 'utf8', (e) => {
+    writeFileSync("README.md", text, "utf8", (e) => {
         console.log(e);
-    })
+    });
+    
     console.log('업데이트 완료');
-})
+})();
