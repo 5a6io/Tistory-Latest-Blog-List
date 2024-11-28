@@ -24,8 +24,10 @@ jobs:
       - name: Update README
         run: npm start
       - name: Commit README
+        env:
+          EMAIL: ${{ secrets.EMAIL }}
         run: |
-          git config --local user.email ${{ secrets.EMAIL }}
+          git config --local user.email $EMAIL
           git config --local user.name "5a6io"
           git add .
           git commit -m "Update README.md"
