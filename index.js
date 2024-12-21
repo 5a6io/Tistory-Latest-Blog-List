@@ -19,7 +19,7 @@ const parser = new Parser({
 
     const feed = await parser.parseURL("https://lucy-devblog.tistory.com/rss");
 
-    text += `<ul>`;
+    text += `<ol>`;
 
     for (let i = 0; i < 10; i++){
         const {title, link} = feed.items[i];
@@ -29,7 +29,7 @@ const parser = new Parser({
         text += `<li><a href='${link}' target='_blank'>${title}</a></li>`;
     }
 
-    text += `</ul>`;
+    text += `</ol>`;
 
     writeFileSync("README.md", text, "utf8", (e) => {
         console.log(e);
