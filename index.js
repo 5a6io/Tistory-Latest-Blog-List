@@ -23,7 +23,7 @@ const parser = new Parser({
 
     for (let i = 0; i < 15; i++){
         const {title, link, pubDate} = feed.items[i];
-        const formaattedDate = new Date(pubDate).toLocaleDateString("en-US", {
+        const formattedDate = new Date(pubDate).toLocaleDateString("en-US", {
             year: "numeric",
             month: "long",
             day: "numeric",
