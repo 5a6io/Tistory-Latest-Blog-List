@@ -19,17 +19,25 @@ const parser = new Parser({
 
     const feed = await parser.parseURL("https://lucy-devblog.tistory.com/rss");
 
-    text += `<ol>`;
+    text += `<ul>`;
 
-    for (let i = 0; i < 10; i++){
-        const {title, link} = feed.items[i];
+    for (let i = 0; i < 15; i++){
+        const {title, link, pubDate} = feed.items[i];
+        const formaattedDate = new Date(pubDate).toLocalDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+        });
+        
         console.log(`${i + 1}번째 게시물`);
         console.log(`추가될 제목: ${title}`);
         console.log(`추가될 링크: ${link}`);
-        text += `<li><a href='${link}' target='_blank'>${title}</a></li>`;
+        console.log(`게시 날짜: ${formattedDate}`);
+        
+        text += `<li><a href='${link}' target='_blank'>${formattedDate} - ${title}</a></li>`;
     }
 
-    text += `</ol>`;
+    text += `</ul>`;
 
     writeFileSync("README.md", text, "utf8", (e) => {
         console.log(e);
